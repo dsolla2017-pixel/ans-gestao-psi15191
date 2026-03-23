@@ -1,5 +1,5 @@
 # ============================================================
-# Autor: Solla, Diogo
+# Autor: Diogo Grawingholt
 # Projeto: Sistema de Gestao de ANS - CAIXA
 # ============================================================
 # GLOSSARIO PARA LEIGO:
@@ -11,7 +11,7 @@ import os
 import sys
 from datetime import datetime
 
-AUTHOR_PATTERN = "Solla, Diogo"
+AUTHOR_PATTERN = "Diogo Grawingholt"
 PROJECT_PATTERN = "Sistema de Gestao de ANS"
 EXTENSIONS = {'.cs', '.ts', '.sql', '.py', '.bat', '.ps1'}
 EXCLUDE_DIRS = {'node_modules', 'bin', 'obj', '.git', 'dist', 'publish'}

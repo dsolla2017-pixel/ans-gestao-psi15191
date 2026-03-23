@@ -2,7 +2,7 @@
 
 **PSI 15191** | ASS Executivo Master - Desenvolvedor | CAIXA Economica Federal
 
-**Autor:** Solla, Diogo | **Gerencia:** GEGOD - Gerencia Nacional de Governanca de Dados
+**Autor:** Diogo Grawingholt | **Gerencia:** GEGOD - Gerencia Nacional de Governanca de Dados
 
 ---
 

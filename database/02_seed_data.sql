@@ -1,5 +1,5 @@
 -- ============================================================
--- Autor: Solla, Diogo
+-- Autor: Diogo Grawingholt
 -- Projeto: Sistema de Gestao de ANS - CAIXA
 -- ============================================================
 -- GLOSSARIO PARA LEIGO:

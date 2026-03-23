@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM Autor: Solla, Diogo
+REM Autor: Diogo Grawingholt
 REM Projeto: Sistema de Gestao de ANS - CAIXA
 REM ============================================================
 REM GLOSSARIO PARA LEIGO:
