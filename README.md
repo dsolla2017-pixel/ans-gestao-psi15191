@@ -1,119 +1,156 @@
-# Sistema de Gestao de Acordos de Nivel de Servico (ANS)
+# Sistema de Gestão de ANS — PSI 15191
 
-**PSI 15191** | ASS Executivo Master - Desenvolvedor | CAIXA Economica Federal
+**Autor:** Diogo Grawingholt | Gerência Nacional de Governança de Dados (GEGOD) — CAIXA
 
-**Autor:** Diogo Grawingholt | **Gerencia:** GEGOD - Gerencia Nacional de Governanca de Dados
+Solução web para registro e gestão de Acordos de Nível de Serviço (ANS) de compartilhamento de dados entre a CAIXA e as empresas do conglomerado.
 
 ---
 
-## Visao Geral
+## Fluxo de Boas Práticas — Estrutura do Projeto
 
-Solucao web para registro e gerenciamento dos Acordos de Nivel de Servico (ANS) de compartilhamento de dados entre a CAIXA e as empresas do conglomerado. O sistema permite incluir, listar, consultar, editar e excluir ANS, com fluxo de assinatura digital (dupla-custodia), controle de vigencia e conformidade com LGPD e MN OR016.
+O repositório segue uma sequência numerada que reflete o fluxo natural de desenvolvimento, da configuração inicial até a documentação final. Cada pasta corresponde a uma etapa do ciclo de vida do projeto.
 
-## Stack Tecnologica
+| Etapa | Pasta | Descrição |
+|-------|-------|-----------|
+| 1 | `01-setup/` | Scripts de configuração local, execução e auditoria de autoria |
+| 2 | `02-database/` | DDL de criação do banco de dados e massa de dados para testes |
+| 3 | `03-backend/` | Código-fonte C#/.NET 8 — Clean Architecture em 5 camadas |
+| 4 | `04-frontend/` | Código-fonte Angular 17 — componentes, serviços, guards e interceptors |
+| 5 | `05-tests/` | Testes unitários com xUnit cobrindo regras de negócio do domínio |
+| 6 | `06-deploy/` | Scripts de deploy para IIS e configuração do servidor web |
+| 7 | `07-docs/` | Documentação estratégica: proposta, jornada do avaliador, checklist e visão de futuro |
 
-| Camada | Tecnologia | Versao |
-|--------|-----------|--------|
-| Back-end | C# / ASP.NET Core | 8.0 |
-| Front-end | Angular + DSC CAIXA | 17 |
-| Banco de Dados | SQL Server / SQLite | 2022 / 3 |
-| Servidor Web | IIS (Kestrel em dev) | 10 |
-| ORM | Entity Framework Core | 8.0 |
+---
 
-## Estrutura do Projeto
+## 1. Setup (`01-setup/`)
 
-```
-ans-gestao/
-  backend/
-    src/
-      Caixa.Ans.Api/           # Controllers, Middleware, Program.cs
-      Caixa.Ans.Application/   # Services, DTOs
-      Caixa.Ans.Domain/        # Entidades, Enums, Interfaces
-      Caixa.Ans.Infrastructure/# DbContext, Repositories
-    tests/
-      Caixa.Ans.UnitTests/     # Testes unitarios (xUnit)
-  frontend/
-    src/app/
-      core/                    # Services, Guards, Interceptors
-      features/acordos/        # Componentes de tela
-      shared/models/           # Interfaces TypeScript
-  database/
-    01_create_database.sql     # Script de criacao do banco
-    02_seed_data.sql           # Massa de dados para teste
-  scripts/
-    run-local.bat              # Execucao local (Windows)
-    run-local.ps1              # Execucao local (PowerShell)
-    deploy-iis.bat             # Deploy em IIS
-    web.config                 # Configuracao do IIS
-  docs/
-    PROPOSTA_DESAFIO.md        # Proposta tecnica completa
-    JORNADA_DO_AVALIADOR.md    # Guia para o avaliador
-    CHECKLIST_DESAFIO_VS_SUPERACAO.md
-    VISAO_FUTURO.md            # Visao de futuro e inovacao
-```
+Contém os scripts necessários para configurar e executar o projeto localmente.
 
-## Execucao Local
+| Arquivo | Finalidade |
+|---------|-----------|
+| `run-local.bat` | Execução local via CMD (Windows) |
+| `run-local.ps1` | Execução local via PowerShell |
+| `audit_authorship.py` | Script Python que valida headers de autoria em todos os arquivos |
 
-### Pre-requisitos
-
-- .NET 8 SDK
-- Node.js 18+
-- Angular CLI (`npm install -g @angular/cli`)
-
-### Opcao 1: Script automatizado (Windows)
-
-```batch
-cd scripts
-run-local.bat
-```
-
-### Opcao 2: PowerShell
-
-```powershell
-cd scripts
-.\run-local.ps1
-```
-
-### Opcao 3: Manual
+**Pré-requisitos:** .NET 8 SDK, Node.js 18+, Angular CLI.
 
 ```bash
-# Back-end
-cd backend/src/Caixa.Ans.Api
-dotnet restore
-dotnet run --urls=http://localhost:5000
+# Via CMD
+01-setup\run-local.bat
 
-# Front-end (em outro terminal)
-cd frontend
-npm install
-npx ng serve --port 4200
+# Via PowerShell
+01-setup\run-local.ps1
 ```
 
-## Banco de Dados
+---
 
-### Configuracao SQL Server (Producao)
+## 2. Database (`02-database/`)
 
-1. Execute `database/01_create_database.sql` no SSMS
-2. Execute `database/02_seed_data.sql` para massa de teste
-3. Configure a connection string em `appsettings.json`
+Scripts SQL para criação do banco e carga de dados de teste.
 
-### SQLite (Desenvolvimento)
+| Arquivo | Finalidade |
+|---------|-----------|
+| `01_create_database.sql` | DDL completa: tabelas, índices, constraints e triggers |
+| `02_seed_data.sql` | Massa de dados com 5 acordos para validação funcional |
 
-O banco SQLite e criado automaticamente ao iniciar a aplicacao em modo desenvolvimento. Nenhuma configuracao adicional e necessaria.
+Execute os scripts na ordem numérica em uma instância SQL Server. Para desenvolvimento, o SQLite é criado automaticamente ao iniciar a aplicação.
 
-## Deploy em IIS
+---
+
+## 3. Backend (`03-backend/`)
+
+API RESTful desenvolvida em C#/.NET 8 com Clean Architecture.
+
+```
+03-backend/src/
+├── Caixa.Ans.Domain/          ← Entidades, Enums e Interfaces (camada mais interna)
+├── Caixa.Ans.Application/     ← DTOs e Serviços de aplicação
+├── Caixa.Ans.Infrastructure/  ← DbContext e Repositórios (Entity Framework Core)
+└── Caixa.Ans.Api/             ← Controllers, Middleware e Program.cs
+```
+
+**Princípios aplicados:** SOLID, DDD, Repository Pattern, inversão de dependência.
+
+---
+
+## 4. Frontend (`04-frontend/`)
+
+Interface web desenvolvida em Angular 17 com Design System CAIXA (DSC).
+
+```
+04-frontend/src/app/
+├── core/
+│   ├── guards/         ← AuthGuard para proteção de rotas
+│   ├── interceptors/   ← JWT Interceptor para autenticação
+│   └── services/       ← AcordoService (comunicação HTTP com a API)
+├── features/
+│   └── acordos/        ← Componentes de listagem e formulário
+└── shared/
+    └── models/         ← Interfaces TypeScript do domínio
+```
+
+---
+
+## 5. Tests (`05-tests/`)
+
+Testes unitários com xUnit que validam as regras de negócio do domínio.
+
+| Arquivo | Cobertura |
+|---------|-----------|
+| `AcordoEntityTests.cs` | Regras de ativação, inativação, exclusão e transições de estado |
+
+---
+
+## 6. Deploy (`06-deploy/`)
+
+Scripts e configurações para publicação em servidor IIS.
+
+| Arquivo | Finalidade |
+|---------|-----------|
+| `deploy-iis.bat` | Script automatizado de deploy para IIS |
+| `web.config` | Configuração do servidor web (rewrite rules, MIME types) |
 
 ```batch
-cd scripts
-deploy-iis.bat C:\inetpub\wwwroot\ans-gestao
+06-deploy\deploy-iis.bat C:\inetpub\wwwroot\ans-gestao
 ```
 
-## Criterios de Avaliacao Atendidos
+---
 
-- **Uso das tecnologias solicitadas:** C#/.NET 8, Angular 17, SQL Server, Node.js, DSC CAIXA
-- **Manutenibilidade e clareza de codigo:** Clean Architecture, SOLID, DDD, comentarios didaticos
-- **Alcance do objetivo proposto:** CRUD completo, assinatura, inativacao, exclusao
-- **Boas praticas:** Testes unitarios, Git Flow, auditoria de autoria, documentacao
+## 7. Documentação (`07-docs/`)
 
-## Licenca
+Documentação estratégica que acompanha a entrega técnica.
 
-Projeto desenvolvido exclusivamente para o PSI 15191 da CAIXA Economica Federal.
+| Documento | Conteúdo |
+|-----------|---------|
+| `PROPOSTA_DESAFIO.md` | Proposta técnica completa com arquitetura, roadmap e diferenciais |
+| `JORNADA_DO_AVALIADOR.md` | Guia passo-a-passo para o avaliador percorrer a entrega |
+| `CHECKLIST_DESAFIO_VS_SUPERACAO.md` | Comparativo requisito vs. entrega vs. superação |
+| `VISAO_FUTURO.md` | Roadmap de evolução com IA, Power BI e Microsoft Fabric |
+
+---
+
+## Tecnologias
+
+| Camada | Tecnologia |
+|--------|-----------|
+| Back-end | C# / .NET 8 / ASP.NET Core |
+| Front-end | Angular 17 / TypeScript / Design System CAIXA |
+| Banco de Dados | SQL Server / SQLite (dev) |
+| Servidor Web | IIS (produção) / Kestrel (desenvolvimento) |
+| Testes | xUnit / Moq |
+| Versionamento | Git / Git Flow |
+
+---
+
+## Critérios de Avaliação Atendidos
+
+| Critério | Como foi atendido |
+|----------|------------------|
+| Uso das tecnologias solicitadas | C#/.NET 8, Angular 17, SQL Server, Node.js, DSC CAIXA |
+| Manutenibilidade e clareza de código | Clean Architecture, SOLID, DDD, comentários em português |
+| Alcance do objetivo proposto | Todas as funcionalidades do desafio implementadas |
+| Técnicas adequadas e melhores práticas | Repository Pattern, JWT, Guards, Interceptors, testes unitários |
+
+---
+
+**Diogo Grawingholt** | GEGOD — CAIXA Econômica Federal | 2025
