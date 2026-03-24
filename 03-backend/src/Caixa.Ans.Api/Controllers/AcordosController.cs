@@ -22,6 +22,7 @@
 // ============================================================
 
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Caixa.Ans.Application.DTOs;
 using Caixa.Ans.Application.Services;
@@ -105,6 +106,7 @@ namespace Caixa.Ans.Api.Controllers
         /// Padrão REST: CreatedAtAction para HATEOAS básico.
         /// </summary>
         [HttpPost]
+        [Authorize(Policy = "EmpregadoGEGOD")]
         public async Task<IActionResult> Criar([FromBody] CriarAcordoDto dto)
         {
             // Em produção, a matrícula é extraída do token JWT autenticado.
@@ -126,6 +128,7 @@ namespace Caixa.Ans.Api.Controllers
         /// pela regra de negócio no Application Service.
         /// </summary>
         [HttpPatch("{id}/assinar")]
+        [Authorize(Policy = "EmpregadoGEGOD")]
         public async Task<IActionResult> Assinar(int id, [FromQuery] string papel)
         {
             var matricula = User?.Identity?.Name ?? "SISTEMA";
@@ -144,6 +147,7 @@ namespace Caixa.Ans.Api.Controllers
         /// O ANS transita de "Ativo" para "PendenteInativacao".
         /// </summary>
         [HttpPost("{id}/solicitar-inativacao")]
+        [Authorize(Policy = "EmpregadoGEGOD")]
         public async Task<IActionResult> SolicitarInativacao(
             int id, [FromBody] SolicitarInativacaoDto dto)
         {
@@ -164,6 +168,7 @@ namespace Caixa.Ans.Api.Controllers
         /// Se recusado: PendenteInativacao → Ativo.
         /// </summary>
         [HttpPatch("{id}/avaliar-inativacao")]
+        [Authorize(Policy = "GerenteGEGOD")]
         public async Task<IActionResult> AvaliarInativacao(
             int id, [FromBody] AvaliarInativacaoDto dto)
         {
@@ -185,6 +190,7 @@ namespace Caixa.Ans.Api.Controllers
         /// é alterada para "Excluído".
         /// </summary>
         [HttpDelete("{id}")]
+        [Authorize(Policy = "EmpregadoGEGOD")]
         public async Task<IActionResult> Excluir(int id)
         {
             var matricula = User?.Identity?.Name ?? "SISTEMA";
