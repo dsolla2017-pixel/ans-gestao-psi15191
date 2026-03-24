@@ -1,5 +1,7 @@
 # Visão de Futuro: Roadmap de Evolução (3 a 5 anos)
-<!-- Autor: Desenvolvedor Sênior - CAIXA -->
+
+> **Autor:** Diogo Grawingholt | **Projeto:** Transformação Digital na Governança de Dados — GEGOD/CAIXA
+> **Site:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org) | **Portfólio:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
 
 A entrega atual do Sistema de Gestão de ANS resolve a dor imediata de controle e rastreabilidade dos acordos de compartilhamento de dados. No entanto, uma solução corporativa deve ser projetada com uma visão estratégica de médio e longo prazo.
 
@@ -36,3 +38,11 @@ Abaixo, apresentamos o roadmap de evolução da plataforma para os próximos 3 a
 | **Ano 1** | Redução de 40% no tempo de tramitação e renovação de acordos. | Automação de Workflows. |
 | **Anos 2-3** | Eliminação de acessos "órfãos" (Data Governance as Code). | Data Mesh / Data Fabric. |
 | **Anos 4-5** | Governança preditiva e mitigação ativa de multas regulatórias. | AI-Augmented Data Management. |
+
+---
+
+> **Documentação completa e painel interativo:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org)
+> **Portfólio do autor:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+> **Repositório:** [github.com/dsolla2017-pixel/ans-gestao-psi15191](https://github.com/dsolla2017-pixel/ans-gestao-psi15191)
+>
+> © 2025 Diogo Grawingholt — Todos os direitos reservados

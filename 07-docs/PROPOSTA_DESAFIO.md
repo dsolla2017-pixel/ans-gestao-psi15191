@@ -1,5 +1,8 @@
 # Proposta Técnica: Sistema de Gestão de Acordos de Nível de Serviço (ANS)
-<!-- Autor: Desenvolvedor Sênior - CAIXA -->
+
+> **Autor:** Diogo Grawingholt | **Projeto:** Transformação Digital na Governança de Dados — GEGOD/CAIXA
+> **Site:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org) | **Portfólio:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+> **PSI:** 15191 — ASS Executivo Master — Papel: Desenvolvedor
 
 A presente proposta técnica descreve a arquitetura, modelagem, fluxos e tecnologias adotadas para a construção do Sistema de Gestão de Acordos de Nível de Serviço (ANS). O sistema atende integralmente ao desafio proposto no Processo Seletivo Interno (PSI) 15191 para a Gerência Nacional de Governança e Inteligência de Dados (GEGOD).
 
@@ -176,4 +179,12 @@ Para maximizar o desempenho nos critérios de avaliação e entregar valor além
 
 ## 15. Conclusão Executiva
 
-O Sistema de Gestão de ANS proposto entrega uma solução madura, segura e perfeitamente aderente ao ambiente corporativo da CAIXA. A adoção de Clean Architecture e Angular com o Design System oficial garante não apenas o cumprimento de todos os requisitos do desafio PSI 15191, mas também a construção de um produto de software escalável, fácil de manter e preparado para evoluções futuras no ecossistema de Governança de Dados da instituição.
+O Sistema de Gestão de ANS proposto entrega uma solução madura, segura e perfeitamente aderente ao ambiente corporativo da CAIXA. A adoção de Clean Architecture e Angular com o Design System oficial garante não apenas o cumprimento de todos os requisitos do desafio PSI 15191, mas também a construção de um produto de software escalável, de manutenção acessível e preparado para evoluções futuras no ecossistema de Governança de Dados da instituição.
+
+---
+
+> **Documentação completa e painel interativo:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org)
+> **Portfólio do autor:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+> **Repositório:** [github.com/dsolla2017-pixel/ans-gestao-psi15191](https://github.com/dsolla2017-pixel/ans-gestao-psi15191)
+>
+> © 2025 Diogo Grawingholt — Todos os direitos reservados

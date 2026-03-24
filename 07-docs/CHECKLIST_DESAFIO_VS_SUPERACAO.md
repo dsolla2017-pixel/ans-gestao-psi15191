@@ -1,5 +1,7 @@
 # Checklist: Desafio vs. Superação
-<!-- Autor: Desenvolvedor Sênior - CAIXA -->
+
+> **Autor:** Diogo Grawingholt | **Projeto:** Transformação Digital na Governança de Dados — GEGOD/CAIXA
+> **Site:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org) | **Portfólio:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
 
 Este documento apresenta um mapeamento direto entre os requisitos exigidos no desafio PSI 15191 e as entregas realizadas, demonstrando não apenas o atendimento integral, mas também as inovações agregadas à solução.
 
@@ -7,10 +9,10 @@ Este documento apresenta um mapeamento direto entre os requisitos exigidos no de
 
 | Requisito do Desafio | Status | Evidência / Localização |
 | :--- | :--- | :--- |
-| **Back-end em C#** | Atendido | Projeto `backend/src/Caixa.Ans.Api` (.NET 8). |
-| **Front-end em Angular + DSC** | Atendido | Projeto `frontend/src/app` com componentes do Design System CAIXA. |
-| **Banco de Dados (SQL Server/SQLite)** | Atendido | Configurações em `appsettings.json` e scripts na pasta `scripts/sql/`. |
-| **Servidor Web IIS** | Atendido | Script `deploy_iis.ps1` na raiz do projeto. |
+| **Back-end em C#** | Atendido | Projeto `03-backend/src/Caixa.Ans.Api` (.NET 8). |
+| **Front-end em Angular + DSC** | Atendido | Projeto `04-frontend/src/app` com componentes do Design System CAIXA. |
+| **Banco de Dados (SQL Server/SQLite)** | Atendido | Configurações em `appsettings.json` e scripts na pasta `02-database/`. |
+| **Servidor Web IIS** | Atendido | Script `06-deploy/deploy-iis.bat` e `06-deploy/web.config`. |
 | **1. Incluir ANS** (Campos completos) | Atendido | Rota `POST /api/v1/acordos` e tela de inclusão no Angular. |
 | **Regra: ANS nasce "Pendente"** | Atendido | Regra encapsulada na entidade `Acordo` (Domain Layer). |
 | **2. Listar ANS** (Filtros e ordenação) | Atendido | Rota `GET /api/v1/acordos` com paginação e *query parameters*. |
@@ -20,8 +22,8 @@ Este documento apresenta um mapeamento direto entre os requisitos exigidos no de
 | **Fluxo de dupla-custódia (Inativação)** | Atendido | Rota `/solicitar-inativacao` e `/avaliar-inativacao`. |
 | **5. Excluir (Lógica)** | Atendido | Rota `DELETE /api/v1/acordos/{id}` atualiza o status para inativo/excluído. |
 | **Nomenclatura Padrão CAIXA** | Atendido | Arquivo `PROPOSTA_DESAFIO.md` (Seção 9) e scripts de banco de dados. |
-| **Scripts de Deploy (.bat/.ps1)** | Atendido | Arquivos `run_local.bat` e `deploy_iis.ps1` na pasta `scripts/`. |
-| **Massa de dados para testes** | Atendido | Script `seed_data.sql` incluído na entrega. |
+| **Scripts de Deploy (.bat/.ps1)** | Atendido | Arquivos `01-setup/run-local.bat`, `01-setup/run-local.ps1` e `06-deploy/deploy-iis.bat`. |
+| **Massa de dados para testes** | Atendido | Script `02-database/02_seed_data.sql` incluído na entrega. |
 
 ## 2. Inovações Acrescidas (Superação)
 
@@ -37,4 +39,12 @@ A solução foi projetada com visão de produto e sustentação a longo prazo, i
 
 - **Requisitos Obrigatórios Atendidos**: 100%
 - **Inovações e Melhores Práticas Adicionadas**: 5 itens críticos de arquitetura e UX.
-- **Nível de Entrega**: Solução corporativa pronta para produção (Enterprise-ready), superando o conceito de "prova de conceito" (PoC).
+- **Nível de Entrega**: Solução corporativa pronta para produção (Enterprise-ready), superando o conceito de prova de conceito (PoC).
+
+---
+
+> **Documentação completa e painel interativo:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org)
+> **Portfólio do autor:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+> **Repositório:** [github.com/dsolla2017-pixel/ans-gestao-psi15191](https://github.com/dsolla2017-pixel/ans-gestao-psi15191)
+>
+> © 2025 Diogo Grawingholt — Todos os direitos reservados

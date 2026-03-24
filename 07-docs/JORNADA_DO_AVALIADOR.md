@@ -1,7 +1,9 @@
 # Jornada do Avaliador: Sistema de Gestão de ANS
-<!-- Autor: Desenvolvedor Sênior - CAIXA -->
 
-Bem-vindo(a) à avaliação da proposta técnica para o desafio PSI 15191. Este documento serve como um guia rápido para que você possa navegar pela solução, compreender as decisões arquiteturais e avaliar o impacto institucional do projeto.
+> **Autor:** Diogo Grawingholt | **Projeto:** Transformação Digital na Governança de Dados — GEGOD/CAIXA
+> **Site:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org) | **Portfólio:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+
+Este documento apresenta um roteiro estruturado para navegação pela proposta técnica do desafio PSI 15191. O objetivo é oferecer uma visão clara das decisões arquiteturais, dos entregáveis e do impacto institucional do projeto. A documentação interativa completa está disponível em [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org).
 
 ## 1. Mapa de Navegação
 
@@ -12,9 +14,10 @@ A tabela abaixo direciona você aos pontos focais da avaliação, otimizando seu
 | **Arquitetura e Decisões Técnicas** | `PROPOSTA_DESAFIO.md` (Seções 3 e 4) | 5 min |
 | **Modelagem e Nomenclatura Padrão** | `PROPOSTA_DESAFIO.md` (Seção 9) | 3 min |
 | **Regras de Negócio e Fluxos** | `PROPOSTA_DESAFIO.md` (Seções 6 e 8) | 4 min |
-| **Código Fonte Back-end (C#)** | Repositório `backend/src/` | 10 min |
-| **Código Fonte Front-end (Angular)** | Repositório `frontend/src/` | 10 min |
-| **Scripts de Deploy e Banco de Dados** | Pasta `scripts/` na raiz do projeto | 2 min |
+| **Código Fonte Back-end (C#)** | Repositório `03-backend/src/` | 10 min |
+| **Código Fonte Front-end (Angular)** | Repositório `04-frontend/src/` | 10 min |
+| **Scripts de Deploy e Banco de Dados** | Pastas `01-setup/`, `02-database/` e `06-deploy/` | 2 min |
+| **Painel Web Interativo** | [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org) | 5 min |
 
 ## 2. Objetivo do Projeto
 
@@ -56,3 +59,11 @@ A implementação de perfis de acesso baseados em funções (RBAC) e o registro 
 | **Segurança de Dados Pessoais** | A exigência de classificação de dados sensíveis no ANS garante o cumprimento da LGPD, protegendo os dados dos clientes da CAIXA. |
 | **Sinergia do Conglomerado** | Facilita a criação de novos produtos e serviços integrados entre a CAIXA e suas participadas, agilizando o compartilhamento legal de informações. |
 | **Sustentabilidade (ESG)** | Digitalização de 100% do processo de acordos, eliminando a necessidade de impressões e tramitações físicas de documentos. |
+
+---
+
+> **Documentação interativa e painel completo:** [gegodtransformacaodosdados.org](https://gegodtransformacaodosdados.org)
+> **Portfólio do autor:** [diogograwingholt.com.br](https://www.diogograwingholt.com.br)
+> **Repositório:** [github.com/dsolla2017-pixel/ans-gestao-psi15191](https://github.com/dsolla2017-pixel/ans-gestao-psi15191)
+>
+> © 2025 Diogo Grawingholt — Todos os direitos reservados
