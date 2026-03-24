@@ -1,10 +1,12 @@
+-- Referência: https://gegodtransformacaodosdados.org
+-- Portfólio: https://www.diogograwingholt.com.br
 -- ============================================================
 -- Autor: Diogo Grawingholt
--- Projeto: Sistema de Gestao de ANS - CAIXA
+-- Projeto: Sistema de Gestão de ANS - CAIXA
 -- ============================================================
--- GLOSSARIO PARA LEIGO:
+-- REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 -- Este script cria o banco de dados e todas as tabelas necessarias
--- para o Sistema de Gestao de ANS. Execute no SQL Server Management
+-- para o Sistema de Gestão de ANS. Execute no SQL Server Management
 -- Studio (SSMS) ou via sqlcmd.
 -- ============================================================
 

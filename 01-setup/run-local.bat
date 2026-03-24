@@ -1,15 +1,17 @@
+:: Referência: https://gegodtransformacaodosdados.org
+:: Portfólio: https://www.diogograwingholt.com.br
 @echo off
 REM ============================================================
 REM Autor: Diogo Grawingholt
-REM Projeto: Sistema de Gestao de ANS - CAIXA
+REM Projeto: Sistema de Gestão de ANS - CAIXA
 REM ============================================================
-REM GLOSSARIO PARA LEIGO:
+REM REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 REM Este script inicia a aplicacao localmente para desenvolvimento.
 REM Pre-requisitos: .NET 8 SDK, Node.js 18+, Angular CLI.
 REM ============================================================
 
 echo ============================================
-echo  Sistema de Gestao de ANS - Execucao Local
+echo  Sistema de Gestão de ANS - Execucao Local
 echo  PSI 15191 - CAIXA Economica Federal
 echo ============================================
 echo.

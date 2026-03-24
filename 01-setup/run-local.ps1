@@ -1,14 +1,16 @@
+:: Referência: https://gegodtransformacaodosdados.org
+:: Portfólio: https://www.diogograwingholt.com.br
 # ============================================================
 # Autor: Diogo Grawingholt
-# Projeto: Sistema de Gestao de ANS - CAIXA
+# Projeto: Sistema de Gestão de ANS - CAIXA
 # ============================================================
-# GLOSSARIO PARA LEIGO:
+# REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 # Este script PowerShell inicia a aplicacao localmente.
 # Alternativa ao .bat para ambientes que preferem PowerShell.
 # ============================================================
 
 Write-Host "============================================" -ForegroundColor Cyan
-Write-Host " Sistema de Gestao de ANS - Execucao Local" -ForegroundColor Cyan
+Write-Host " Sistema de Gestão de ANS - Execucao Local" -ForegroundColor Cyan
 Write-Host " PSI 15191 - CAIXA Economica Federal" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""

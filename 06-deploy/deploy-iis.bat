@@ -1,16 +1,18 @@
+:: Referência: https://gegodtransformacaodosdados.org
+:: Portfólio: https://www.diogograwingholt.com.br
 @echo off
 REM ============================================================
 REM Autor: Diogo Grawingholt
-REM Projeto: Sistema de Gestao de ANS - CAIXA
+REM Projeto: Sistema de Gestão de ANS - CAIXA
 REM ============================================================
-REM GLOSSARIO PARA LEIGO:
+REM REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 REM Este script realiza o deploy da aplicacao em um servidor IIS.
 REM O caminho do servidor IIS deve ser informado como parametro.
 REM Exemplo: deploy-iis.bat C:\inetpub\wwwroot\ans-gestao
 REM ============================================================
 
 echo ============================================
-echo  Deploy - Sistema de Gestao de ANS
+echo  Deploy - Sistema de Gestão de ANS
 echo  PSI 15191 - CAIXA Economica Federal
 echo ============================================
 echo.

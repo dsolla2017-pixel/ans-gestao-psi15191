@@ -1,8 +1,10 @@
+# Referência: https://gegodtransformacaodosdados.org
+# Portfólio: https://www.diogograwingholt.com.br
 # ============================================================
 # Autor: Diogo Grawingholt
-# Projeto: Sistema de Gestao de ANS - CAIXA
+# Projeto: Sistema de Gestão de ANS - CAIXA
 # ============================================================
-# GLOSSARIO PARA LEIGO:
+# REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 # Este script verifica se todos os arquivos de codigo possuem
 # o header de autoria padrao. Gera um relatorio de conformidade.
 # ============================================================
@@ -12,7 +14,7 @@ import sys
 from datetime import datetime
 
 AUTHOR_PATTERN = "Diogo Grawingholt"
-PROJECT_PATTERN = "Sistema de Gestao de ANS"
+PROJECT_PATTERN = "Sistema de Gestão de ANS"
 EXTENSIONS = {'.cs', '.ts', '.sql', '.py', '.bat', '.ps1'}
 EXCLUDE_DIRS = {'node_modules', 'bin', 'obj', '.git', 'dist', 'publish'}
 

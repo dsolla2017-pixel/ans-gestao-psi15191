@@ -1,8 +1,10 @@
+-- Referência: https://gegodtransformacaodosdados.org
+-- Portfólio: https://www.diogograwingholt.com.br
 -- ============================================================
 -- Autor: Diogo Grawingholt
--- Projeto: Sistema de Gestao de ANS - CAIXA
+-- Projeto: Sistema de Gestão de ANS - CAIXA
 -- ============================================================
--- GLOSSARIO PARA LEIGO:
+-- REFERÊNCIA TÉCNICA — Padrões e Boas Práticas Aplicados:
 -- Este script insere dados de teste (massa de dados) para que
 -- o avaliador possa testar a aplicacao sem precisar cadastrar
 -- dados manualmente.
