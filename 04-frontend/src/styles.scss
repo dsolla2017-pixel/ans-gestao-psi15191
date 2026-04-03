@@ -1,0 +1,87 @@
+/**
+ * Estilos globais da aplicação
+ * Sistema de Gestão de ANS - PSI 15191 CAIXA
+ * Design System CAIXA: azul institucional #005CA9, laranja #F37021
+ */
+
+/* === Reset e Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+  color: #333333;
+}
+
+/* === Cores institucionais CAIXA === */
+:root {
+  --caixa-azul-primario: #005CA9;
+  --caixa-azul-escuro: #003D6B;
+  --caixa-azul-claro: #4A90D9;
+  --caixa-laranja: #F37021;
+  --caixa-laranja-claro: #FF9A5C;
+  --caixa-branco: #FFFFFF;
+  --caixa-cinza-claro: #F5F5F5;
+  --caixa-cinza-medio: #E0E0E0;
+  --caixa-cinza-escuro: #616161;
+  --caixa-sucesso: #4CAF50;
+  --caixa-alerta: #FF9800;
+  --caixa-erro: #F44336;
+  --caixa-info: #2196F3;
+}
+
+/* === Tipografia === */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--caixa-azul-primario);
+  font-weight: 500;
+}
+
+a {
+  color: var(--caixa-azul-primario);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--caixa-azul-escuro);
+    text-decoration: underline;
+  }
+}
+
+/* === Utilitários === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* === Status badges para acordos ANS === */
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &.rascunho { background-color: #E3F2FD; color: #1565C0; }
+  &.em-analise { background-color: #FFF3E0; color: #E65100; }
+  &.vigente { background-color: #E8F5E9; color: #2E7D32; }
+  &.suspenso { background-color: #FFF8E1; color: #F57F17; }
+  &.encerrado { background-color: #FAFAFA; color: #616161; }
+}
+
+/* === Scrollbar customizada === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--caixa-cinza-claro); }
+::-webkit-scrollbar-thumb {
+  background: var(--caixa-cinza-medio);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--caixa-cinza-escuro); }
